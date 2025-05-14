@@ -29,7 +29,7 @@ jobs:
             docker pull "${image}" --platform "linux/arm64"
             image_name="${image//\//_}"
             image_name="${image_name//:/_}"
-            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/arm64/$image"
+            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$image-arm64"
             docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
             docker tag $image $new_image
             docker push $new_image
